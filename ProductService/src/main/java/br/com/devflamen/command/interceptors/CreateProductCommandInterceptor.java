@@ -23,7 +23,7 @@ public class CreateProductCommandInterceptor implements MessageDispatchIntercept
 			
 			log.info("Intercepted command: {}", command.getPayload());
 			
-			if(CreateProductCommand.class.equals(command.getPayload())) {
+			if(CreateProductCommand.class.equals(command.getPayload().getClass())) {
 				
 				CreateProductCommand createProductCommand = (CreateProductCommand) command.getPayload();
 				

@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class CreateProductRest {
 	
-	@NotBlank(message = "Product is a required Field")
+	//@NotBlank(message = "Product is a required Field")
 	private String title;
 	
 	@Min(value = 0, message = "Price cannot be lower than 0")
