@@ -1,5 +1,6 @@
 package br.com.devflamen.query;
 
+import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,7 @@ import br.com.devflamen.core.events.ProductCreatedEvent;
 import br.com.devflamen.core.repository.ProductRepository;
 
 @Component
+@ProcessingGroup("product-group")
 public class ProductEventsHandler {
 	
 	private final ProductRepository productRepository;	
