@@ -2,6 +2,7 @@ package br.com.devflamen.command;
 
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.eventhandling.ResetHandler;
 import org.springframework.stereotype.Component;
 
 import br.com.devflamen.core.data.ProductLookup;
@@ -25,5 +26,10 @@ public class ProductLookupEventsHandler {
 		
 		productLookupRepository.save(productLookUp);
 		
+	}
+	
+	@ResetHandler
+	public void reset() {
+		productLookupRepository.deleteAll();
 	}
 }
